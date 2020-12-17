@@ -8,13 +8,12 @@ Implementation of ReXNet-tiny model on CIFAR10 using PyTorch
 
 It's unofficial code!  [ [origin paper](https://arxiv.org/abs/2007.00992) ]
 
-- ReXNet-tiny-cifar
-
-- Various optimizer (SGD, SGDP, SGDMix, Adam, AdamP, AdamW)
-- Scheduler (step, multistep, cosine)
-- Augmentation (cutmix, randaugment, randaugmentv2 with cutmix)
-- Comparison with EfficientNet-tiny
-- Model compression
+- [ReXNet-tiny-cifar](https://github.com/ysbsb/ReXNet-PyTorch#run)
+- [Various optimizer (SGD, SGDP, SGDMix, Adam, AdamP, AdamW)](https://github.com/ysbsb/ReXNet-PyTorch#1-rexnet-tiny-cifar-with-optimizer)
+- [Scheduler (step, multistep, cosine)](https://github.com/ysbsb/ReXNet-PyTorch#2-scheduler)
+- [Augmentation (cutmix, randaugment, randaugmentv2 with cutmix)](https://github.com/ysbsb/ReXNet-PyTorch#3-augmentation)
+- [Comparison with EfficientNet-tiny](https://github.com/ysbsb/ReXNet-PyTorch#4-comparision-with-efficientnet-cifar)
+- [Model compression](https://github.com/ysbsb/ReXNet-PyTorch#5-model-compression-todo)
 
 
 
@@ -105,9 +104,6 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 
 
 
-<br>
-
-
 
 <h3>2. scheduler</h3>
 
@@ -127,9 +123,6 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 
 
 
-<br>
-
-
 
 <h3>3. Augmentation</h3>
 
@@ -144,7 +137,6 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 
 
 
-<br>
 
 
 
@@ -155,9 +147,6 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 | Efficientnet-tiny-cifar | 32x32      | Adam      | 93.18      |        |
 | ReXNet-tiny-cifar       | 32x32      | Adam      | 93.82      | 1.9M   |
 
-
-
-<br>
 
 
 
