@@ -6,13 +6,23 @@
 
 Implementation of ReXNet-tiny model on CIFAR10 using PyTorch
 
-It's unofficial code!  [origin paper]   [project page]
+It's unofficial code!  [ [origin paper](https://arxiv.org/abs/2007.00992) ]
+
+- ReXNet-tiny-cifar
+
+- Various optimizer (SGD, SGDP, SGDMix, Adam, AdamP, AdamW)
+- Scheduler (step, multistep, cosine)
+- Augmentation (cutmix, randaugment, randaugmentv2 with cutmix)
+- Comparison with EfficientNet-tiny
+- Model compression
 
 
 
 
 
-<h3>Abstract</h3>
+
+
+<h2>Abstract</h2>
 
 (1) simple and effective design principles to mitigate the representational bottleneck
 
@@ -20,35 +30,61 @@ It's unofficial code!  [origin paper]   [project page]
 
 
 
-<h3>Method</h3>
+
+
+<h2>Method</h2>
 
 
 
-- efficient model
-
-- optimizer
-- scheduler
-- augmentation
-- comparison with efficientnet
-- model compression
+![rexnet-rank](https://user-images.githubusercontent.com/37301677/102445963-0cc9d200-4070-11eb-9985-7c0fbcff2355.PNG)
 
 
 
-<h3>Run</h3>
+![rexnet](https://user-images.githubusercontent.com/37301677/102445958-0b98a500-4070-11eb-9767-16723fa51b4a.PNG)
 
 
 
 
 
-<h3>Experiement</h3>
+
+
+<h2>Run</h2>
+
+
+
+ReXNet-tiny
+
+```
+CUDA_VISIBLE_DEVICES=0 python train.py --epochs 100 \
+--savepath ./checkpoint/cifar10/sgd
+```
+
+
+
+ReXNet-tiny with SGDMix
+
+```
+CUDA_VISIBLE_DEVICES=0 python train_sgdmix.py --epochs 100 \
+--savepath ./checkpoint/cifar10/sgdmix \
+--name sgdmix
+```
+
+
+
+ReXNet-tiny with RandAugment12 and cutmix 0.5
+
+```
+CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
+--savepath ./checkpoint/cifar10/sgd_randaugsubin_cutmix12 \
+--name sgd_randaugsubin_cutmix12 \
+--rand_n 1 --rand_m 2
+```
 
 
 
 
 
-| Model             | Input Res. | Optimizer | Scheduler               | Top-1 acc. | Params |
-| ----------------- | ---------- | --------- | ----------------------- | ---------- | ------ |
-| ReXNet-tiny-cifar | 32x32      | SGDMix    | Multi step [30, 60, 90] |            | 1.9M   |
+<h2>Experiement</h2>
 
 
 
@@ -62,14 +98,14 @@ It's unofficial code!  [origin paper]   [project page]
 | ----------------- | ---------- | --------- | ---------- | ------ |
 | ReXNet-tiny-cifar | 32x32      | Adam      | 93.82      | 1.9M   |
 | ReXNet-tiny-cifar | 32x32      | AdamW     | 93.82      | 1.9M   |
-| ReXNet-tiny-cifar | 32x32      | AdamP     |            | 1.9M   |
+| ReXNet-tiny-cifar | 32x32      | AdamP     | TODO       | 1.9M   |
 | ReXNet-tiny-cifar | 32x32      | SGD       | 94.90      | 1.9M   |
 | ReXNet-tiny-cifar | 32x32      | SGDP      | 94.43      | 1.9M   |
 | ReXNet-tiny-cifar | 32x32      | SGDMix    | 95.04      | 1.9M   |
 
 
 
-
+<br>
 
 
 
@@ -83,7 +119,15 @@ It's unofficial code!  [origin paper]   [project page]
 
 
 
+| Model                                      | Input Res. | Optimizer | Top-1 acc. | Params |
+| ------------------------------------------ | ---------- | --------- | ---------- | ------ |
+| ReXNet-tiny-cifar, Multi step [30, 60, 90] | 32x32      | SGDMix    | TODO       | 1.9M   |
 
+
+
+
+
+<br>
 
 
 
@@ -93,14 +137,14 @@ It's unofficial code!  [origin paper]   [project page]
 | ------------------------------------------- | ---------- | --------- | ---------- | ------ |
 | ReXNet-tiny-cifar                           | 32x32      | Adam      | 93.82      | 1.9M   |
 | ReXNet-tiny-cifar + cutmix                  | 32x32      | Adam      | 94.97      | 1.9M   |
-| ReXNet-tiny-cifar + cutmix                  | 32x32      | SGDMix    |            | 1.9M   |
+| ReXNet-tiny-cifar + cutmix                  | 32x32      | SGDMix    | TODO       | 1.9M   |
 | ReXNet-tiny-cifar + randaug (1, 2)          | 32x32      | Adam      | 94.        | 1.9M   |
 | ReXNet-tiny-cifar + randaug (1, 2) + cutmix | 32x32      | Adam      | 95.02      | 1.9M   |
-| ReXNet-tiny-cifar + randaug (1, 2) + cutmix | 32x32      | SGDMix    |            | 1.9M   |
+| ReXNet-tiny-cifar + randaug (1, 2) + cutmix | 32x32      | SGDMix    | TODO       | 1.9M   |
 
 
 
-
+<br>
 
 
 
@@ -108,30 +152,23 @@ It's unofficial code!  [origin paper]   [project page]
 
 | Model                   | Input Res. | Optimizer | Top-1 acc. | Params |
 | ----------------------- | ---------- | --------- | ---------- | ------ |
-| Efficientnetb0-cifar    | 32x32      | Adam      | 93.93      |        |
 | Efficientnet-tiny-cifar | 32x32      | Adam      | 93.18      |        |
 | ReXNet-tiny-cifar       | 32x32      | Adam      | 93.82      | 1.9M   |
 
 
 
+<br>
 
 
 
-
-5. Model Compression
-
-
-
-| Model                 | Input Res. | Optimizer | Top-1 acc. | Params |
-| --------------------- | ---------- | --------- | ---------- | ------ |
-| ReXNet-tiny-cifar-0.5 |            |           |            |        |
+5. Model Compression (TODO)
 
 
 
+<br>
 
 
 
-
-<h3>Author</h3>
+<h2>Author</h2>
 
 - Subin Yang
