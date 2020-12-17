@@ -92,7 +92,7 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 
 
 
-1. ReXNet-tiny-cifar with optimizer
+<h3>1. ReXNet-tiny-cifar with optimizer</h3>
 
 | Model             | Input Res. | Optimizer | Top-1 acc. | Params |
 | ----------------- | ---------- | --------- | ---------- | ------ |
@@ -109,7 +109,7 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 
 
 
-2. scheduler
+<h3>2. scheduler</h3>
 
 | Model                           | Input Res. | Optimizer | Top-1 acc. | Params |
 | ------------------------------- | ---------- | --------- | ---------- | ------ |
@@ -131,7 +131,7 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 
 
 
-3. Augmentation
+<h3>3. Augmentation</h3>
 
 | Model                                       | Input Res. | Optimizer | Top-1 acc. | Params |
 | ------------------------------------------- | ---------- | --------- | ---------- | ------ |
@@ -148,7 +148,7 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 
 
 
-4. Comparision with efficientnet-cifar
+<h3>4. Comparision with efficientnet-cifar</h3>
 
 | Model                   | Input Res. | Optimizer | Top-1 acc. | Params |
 | ----------------------- | ---------- | --------- | ---------- | ------ |
@@ -161,7 +161,7 @@ CUDA_VISIBLE_DEVICES=0 python train_sgd_randaugcutout_cutmix.py \
 
 
 
-5. Model Compression (TODO)
+<h3>5. Model Compression (TODO)</h3>
 
 
 
