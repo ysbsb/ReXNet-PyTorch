@@ -6,7 +6,7 @@
 
 Implementation of ReXNet-tiny model on CIFAR10 using PyTorch
 
-It's unofficial code!  [ [origin paper](https://arxiv.org/abs/2007.00992) ]
+It's unofficial code!  [[origin paper]](https://arxiv.org/abs/2007.00992)
 
 - [ReXNet-tiny-cifar](https://github.com/ysbsb/ReXNet-PyTorch#run)
 - [Various optimizer (SGD, SGDP, SGDMix, Adam, AdamP, AdamW)](https://github.com/ysbsb/ReXNet-PyTorch#1-rexnet-tiny-cifar-with-optimizer)
