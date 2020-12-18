@@ -14,7 +14,6 @@ It's unofficial code!  [[origin paper]](https://arxiv.org/abs/2007.00992)
 - [Augmentation (CutMix, RandAugment, RandAugmentv2 with CutMix)](https://github.com/ysbsb/ReXNet-PyTorch#3-augmentation)
 - [Comparison with EfficientNet-tiny](https://github.com/ysbsb/ReXNet-PyTorch#4-comparision-with-efficientnet-cifar)
 - [Model Compression](https://github.com/ysbsb/ReXNet-PyTorch#5-model-compression-todo)
-- Change to pad 3 (TODO)
 - Add other models (EfficientNet, GhostNet, MobileNeXt, WideResNet) (TODO)
 - Hyperparameter (TODO)
 
